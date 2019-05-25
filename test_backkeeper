@@ -1,0 +1,20 @@
+unsigned long currentTime = millis();
+
+void test_backkeeper(unsigned int time)
+{
+ //////// ตัวแปร //////
+ int servo_hand = 1;
+ int servo_arm = 2;
+ currentTime=millis();
+ 
+ servo(servo_arm, 100 ); delay(50);
+ 
+ /////// การทำงาน ////////
+ while(time < millis()-currentTime) // ลูป while ถอยหลังจนกว่าจะถึงเวลาที่กำหนด
+ {
+  // ถอยหลัง
+  motor(1,-30); motor(2,-30);
+ }
+ 
+ 
+}
